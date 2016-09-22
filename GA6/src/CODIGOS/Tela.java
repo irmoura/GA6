@@ -9,6 +9,7 @@ import static CODIGOS.Planilha.PS;
 import java.awt.Color;
 import java.util.Calendar;
 import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
 import javax.swing.Timer;
 
 /**
@@ -41,6 +42,8 @@ public class Tela extends javax.swing.JFrame {
     public String HC;//HORARIO CRONOMETRO
     public int minutos_int;
     public int horas_int;
+    
+    public String Senha = "CP1318RMKLZ";
     
     public Planilha planilha = new Planilha();
     
@@ -433,8 +436,38 @@ public class Tela extends javax.swing.JFrame {
     }//GEN-LAST:event_BTN6ActionPerformed
 
     private void BOTAO_ZERARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BOTAO_ZERARActionPerformed
-        // TODO add your handling code here:
-        v = 0;
+        // TODO add your handling code here:    
+                 Object[] options = { "Sim", "Não" };   
+        int opcao = JOptionPane.showOptionDialog(null,"Deseja zerar a contagem ?","Aviso",
+        JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, null, options, options[0]);   
+  
+        if (opcao != 0){
+        //JOptionPane.showMessageDialog(null,"");
+        }else{
+              
+            String senha = "";
+            int tentativas = 3;//Define o número de tentativas que o usuário terá para acertar a senha.
+            
+            for(int i=0;i<tentativas;i++)
+            {
+                if(!senha.equals(Senha))      
+                {
+                
+                    JPasswordField jpf = new JPasswordField();
+            
+                    JOptionPane.showConfirmDialog(null,new Object[]{ jpf},"Warning "+(i+1)+"ª tentativa.",JOptionPane.OK_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE);
+        
+                    senha = new String(jpf.getPassword());
+                    
+                }    
+            }
+            if (!senha.equals(Senha) || senha.equals(null))    
+            {
+                JOptionPane.showMessageDialog(null,"Senha incorreta ou operação cancelada","Aviso",JOptionPane.WARNING_MESSAGE);
+            }
+            else
+            {
+             v = 0;
                 TDA = 0;
                 AT1 = 0;
                 AT2 = 0;
@@ -449,7 +482,10 @@ public class Tela extends javax.swing.JFrame {
                 BTN3.setText(A4);
                 BTN4.setText(A5);
                 BTN5.setText(A6);
-                BTN6.setText(A7);
+                BTN6.setText(A7);  
+            }
+        }
+                
     }//GEN-LAST:event_BOTAO_ZERARActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
