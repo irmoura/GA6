@@ -223,6 +223,7 @@ public class Tela extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(988, 382));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         BTN1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         BTN1.setText("Técnico 1 - 10");
@@ -233,6 +234,7 @@ public class Tela extends javax.swing.JFrame {
                 BTN1ActionPerformed(evt);
             }
         });
+        getContentPane().add(BTN1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 319, -1, -1));
 
         BTN2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         BTN2.setText("Técnico 2 - 10");
@@ -243,6 +245,7 @@ public class Tela extends javax.swing.JFrame {
                 BTN2ActionPerformed(evt);
             }
         });
+        getContentPane().add(BTN2, new org.netbeans.lib.awtextra.AbsoluteConstraints(184, 319, -1, -1));
 
         BTN3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         BTN3.setText("Técnico 3 - 10");
@@ -253,6 +256,7 @@ public class Tela extends javax.swing.JFrame {
                 BTN3ActionPerformed(evt);
             }
         });
+        getContentPane().add(BTN3, new org.netbeans.lib.awtextra.AbsoluteConstraints(358, 319, -1, -1));
 
         BTN4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         BTN4.setText("Técnico 4 - 10");
@@ -263,6 +267,7 @@ public class Tela extends javax.swing.JFrame {
                 BTN4ActionPerformed(evt);
             }
         });
+        getContentPane().add(BTN4, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 319, -1, -1));
 
         BTN5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         BTN5.setText("Técnico 5 - 10");
@@ -273,6 +278,7 @@ public class Tela extends javax.swing.JFrame {
                 BTN5ActionPerformed(evt);
             }
         });
+        getContentPane().add(BTN5, new org.netbeans.lib.awtextra.AbsoluteConstraints(674, 319, -1, -1));
 
         BTN6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         BTN6.setText("Técnico 6 - 10");
@@ -283,6 +289,7 @@ public class Tela extends javax.swing.JFrame {
                 BTN6ActionPerformed(evt);
             }
         });
+        getContentPane().add(BTN6, new org.netbeans.lib.awtextra.AbsoluteConstraints(836, 319, -1, -1));
 
         BTN_CHAMAR.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         BTN_CHAMAR.setText("CHAMAR");
@@ -293,9 +300,11 @@ public class Tela extends javax.swing.JFrame {
                 BTN_CHAMARActionPerformed(evt);
             }
         });
+        getContentPane().add(BTN_CHAMAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(347, 11, -1, -1));
 
         TEXTO_NOME_DA_VEZ.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         TEXTO_NOME_DA_VEZ.setText("Técnico 1 - 1111");
+        getContentPane().add(TEXTO_NOME_DA_VEZ, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 110, -1, -1));
 
         BOTAO_ZERAR.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         BOTAO_ZERAR.setText("ZERAR");
@@ -306,65 +315,12 @@ public class Tela extends javax.swing.JFrame {
                 BOTAO_ZERARActionPerformed(evt);
             }
         });
+        getContentPane().add(BOTAO_ZERAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(546, 11, -1, -1));
 
         TEXTO_TOTAL.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         TEXTO_TOTAL.setText("Atendimentos :");
         TEXTO_TOTAL.setToolTipText("");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(TEXTO_TOTAL)
-                                .addGap(200, 200, 200)
-                                .addComponent(BTN_CHAMAR)
-                                .addGap(120, 120, 120)
-                                .addComponent(BOTAO_ZERAR))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(BTN1)
-                                .addGap(47, 47, 47)
-                                .addComponent(BTN2)
-                                .addGap(47, 47, 47)
-                                .addComponent(BTN3)
-                                .addGap(35, 35, 35)
-                                .addComponent(BTN4)
-                                .addGap(27, 27, 27)
-                                .addComponent(BTN5)
-                                .addGap(35, 35, 35)
-                                .addComponent(BTN6))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(276, 276, 276)
-                        .addComponent(TEXTO_NOME_DA_VEZ)))
-                .addGap(10, 10, 10))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(TEXTO_TOTAL)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(BTN_CHAMAR)
-                            .addComponent(BOTAO_ZERAR))))
-                .addGap(104, 104, 104)
-                .addComponent(TEXTO_NOME_DA_VEZ)
-                .addGap(123, 123, 123)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(BTN1)
-                    .addComponent(BTN2)
-                    .addComponent(BTN3)
-                    .addComponent(BTN4)
-                    .addComponent(BTN5)
-                    .addComponent(BTN6)))
-        );
+        getContentPane().add(TEXTO_TOTAL, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
