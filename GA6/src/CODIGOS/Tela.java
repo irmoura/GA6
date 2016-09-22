@@ -80,6 +80,11 @@ public class Tela extends javax.swing.JFrame {
                     v = v - 4;
                 }
                 //////////////////////////////////////////////////////////////////////
+                /*SE APENAS O 3º E O 4º TÉCNICO ESTIVEREM HABILITADOS*/
+                if(v == 5 && BTN1.isSelected() && BTN2.isSelected() && !BTN3.isSelected() && !BTN4.isSelected() && BTN5.isSelected() && BTN6.isSelected()){
+                    v = v - 2;
+                }
+                //////////////////////////////////////////////////////////////////////
                 /*SE APENAS O 2º E O 3º TÉCNICO ESTIVEREM HABILITADOS*/
                 if(v == 4 && BTN1.isSelected() && !BTN2.isSelected() && !BTN3.isSelected() && BTN4.isSelected() && BTN5.isSelected() && BTN6.isSelected()){
                     v = v - 2;
