@@ -7,7 +7,9 @@ package CODIGOS;
 
 import static CODIGOS.Planilha.PS;
 import java.awt.Color;
+import java.util.Calendar;
 import javax.swing.JOptionPane;
+import javax.swing.Timer;
 
 /**
  *
@@ -24,6 +26,22 @@ public class Tela extends javax.swing.JFrame {
     
     public static String A1, A2, A3, A4, A5, A6, A7, B1, B2, B3, B4, B5, B6, B7, C1, C2, C3, C4, C5, C6, C7, D1, D2, D3, D4, D5, D6, D7, E1, E2, E3, E4, E5, E6, E7, F1, F2, F3, F4, F5, F6, F7;
     
+    public int HCT1, MCT1, HST1, MST1, HCT2, MCT2, HST2, MST2, HCT3, MCT3, HST3, MST3, HCT4, MCT4, HST4, MST4,  HCT5, MCT5, HST5, MST5, HCT6, MCT6, HST6, MST6;
+    
+    public String ET1, ST1, ET2, ST2, ET3, ST3, ET4, ST4, ET5, ST5,  ET6, ST6;
+    
+    public int hora, minuto, segundo;
+    public String horas;
+    public String opcao;
+    public Calendar now;
+    public Timer timer;
+    
+    public String segundos;
+    public String minutos;
+    public String HC;//HORARIO CRONOMETRO
+    public int minutos_int;
+    public int horas_int;
+    
     public Planilha planilha = new Planilha();
     
     /**
@@ -31,6 +49,14 @@ public class Tela extends javax.swing.JFrame {
      */
     public Tela() {
         initComponents();
+    }
+    
+    public void obterHoras(){
+        now = Calendar.getInstance();
+        horas = String.format("%1$tH:%1$tM:%1$tS", now);//HORAS NO FORMATO 13:00:00
+        hora = Integer.parseInt(String.format("%1$tH", now));//HORAS 13
+        minuto = Integer.parseInt(String.format("%1$tM", now));//MINUTO 00
+        segundo = Integer.parseInt(String.format("%1$tS", now));//SEGUNDO
     }
     
     public void FuncaoPrincipal(){
@@ -491,6 +517,48 @@ public class Tela extends javax.swing.JFrame {
                 BTN5.setText(A6);
                 BTN6.setText(A7);
         ////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////
+        HCT1 = Integer.parseInt(C2);//Hora Chegada Técnico 1
+        MCT1 = Integer.parseInt(D2);//Minuto chegada Técnico 1
+        HST1 = Integer.parseInt(E2);//Hora Saida Técnico 1
+        MST1 = Integer.parseInt(F2);//Minuto Saida Técnico 1
+//        ET1 = PSL2[6];//Entrada Técnico 1
+//        ST1 = PSL2[7];//Saida Técnico 1
+        
+        HCT2 = Integer.parseInt(C3);//Hora Chegada Técnico 2
+        MCT2 = Integer.parseInt(D3);//Minuto Chegada Técnico 2
+        HST2 = Integer.parseInt(E3);//Hora Saida Técnico 2
+        MST2 = Integer.parseInt(F3);//Minuto Saida Técnico 2
+//        ET2 = PSL3[6];//Entrada Técnico 2
+//        ST2 = PSL3[7];//Saida Técnico 2
+        
+        HCT3 = Integer.parseInt(C4);//Hora Chegada Técnico 3
+        MCT3 = Integer.parseInt(D4);//Minuto Chegada Técnico 3
+        HST3 = Integer.parseInt(E4);//Hora Saida Técnico 3
+        MST3 = Integer.parseInt(F4);//Minuto Saida Técnico 3
+//        ET3 = PSL4[6];//Entrada Técnico 3
+//        ST3 = PSL4[7];//Saida Técnico 3
+        
+        HCT4 = Integer.parseInt(C5);//Hora Chegada Técnico 4
+        MCT4 = Integer.parseInt(D5);//Minuto Chegada Técnico 4
+        HST4 = Integer.parseInt(E5);//Hora Saida Técnico 4
+        MST4 = Integer.parseInt(F5);//Minuto Saida Técnico 4
+//        ET4 = PSL5[6];//Entrada Técnico 4
+//        ST4 = PSL5[7];//Saida Técnico 4
+        
+        HCT5 = Integer.parseInt(C6);//Hora Chegada Técnico 5
+        MCT5 = Integer.parseInt(D6);//Minuto Chegada Técnico 5
+        HST5 = Integer.parseInt(E6);//Hora Saida Técnico 5
+        MST5 = Integer.parseInt(F6);//Minuto Saida Técnico 5
+//        ET5 = PSL6[6];//Entrada Técnico 5
+//        ST5 = PSL6[7];//Saida Técnico 5
+        
+        HCT6 = Integer.parseInt(C7);//Hora Chegada Técnico 5
+        MCT6 = Integer.parseInt(D7);//Minuto Chegada Técnico 5
+        HST6 = Integer.parseInt(E7);//Hora Saida Técnico 5
+        MST6 = Integer.parseInt(F7);//Minuto Saida Técnico 5
+//        ET6 = PSL6[6];//Entrada Técnico 5
+//        ST6 = PSL6[7];//Saida Técnico 5
         
     }//GEN-LAST:event_formWindowOpened
 
