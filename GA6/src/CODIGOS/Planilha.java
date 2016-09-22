@@ -24,7 +24,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
  */
 public class Planilha {
     
-    public static String[] PS = new String[36];
+    public static String[] PS = new String[42];
     public static int count;
     
     public static void lerPlanilha(String arquivo){
@@ -33,7 +33,7 @@ public class Planilha {
         
         try {
             
-            File dir = new File("C:\\GA");
+            File dir = new File("C:\\GA6");
             File file = new File(dir,arquivo+".xlsx");
             fisPlanilha = new FileInputStream(file);
             
@@ -92,20 +92,5 @@ public class Planilha {
             }
         }
         
-    }
-
-    /**
-     * @param args the command line arguments
-     */
-    /*public static void main(String[] args) {
-        // TODO code application logic here
-        
-        lerPlanilha("CONFIG3");
-        
-        for(int i=0; i < PS.length; i++){
-                JOptionPane.showMessageDialog(null,""+PS[i]+"    "+i);
-        }
-
-    }*/
-    
+    } 
 }

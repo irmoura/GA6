@@ -5,6 +5,7 @@
  */
 package CODIGOS;
 
+import static CODIGOS.Planilha.PS;
 import java.awt.Color;
 import javax.swing.JOptionPane;
 
@@ -20,7 +21,10 @@ public class Tela extends javax.swing.JFrame {
     public int v;
     public int TDA;
     public int AT1, AT2, AT3, AT4, AT5, AT6;
-    //public static String[] PSL2, PSL3, PSL4, PSL5, PSL6;
+    
+    public static String A1, A2, A3, A4, A5, A6, A7, B1, B2, B3, B4, B5, B6, B7, C1, C2, C3, C4, C5, C6, C7, D1, D2, D3, D4, D5, D6, D7, E1, E2, E3, E4, E5, E6, E7, F1, F2, F3, F4, F5, F6, F7;
+    
+    public Planilha planilha = new Planilha();
     
     /**
      * Creates new form Tela
@@ -152,44 +156,44 @@ public class Tela extends javax.swing.JFrame {
                 /*NA VEZ DO TÉCNICO E O MESMO ESTIVER HABILITADO*/
                 if(v == 1 && !BTN1.isSelected()){
                     
-                    TEXTO_NOME_DA_VEZ.setText("Técnico 1"+" - "+"1111");
+                    TEXTO_NOME_DA_VEZ.setText(A2+" - "+B2);
                     AT1++;
-                    BTN1.setText("Técnico 1"+" - "+AT1);
+                    BTN1.setText(A2+" - "+AT1);
                     TDA++;
                     
                 }       if(v == 2 && !BTN2.isSelected()){
                     
-                    TEXTO_NOME_DA_VEZ.setText("Técnico 2"+" - "+"2222");
+                    TEXTO_NOME_DA_VEZ.setText(A3+" - "+B3);
                     AT2++;
-                    BTN2.setText("Técnico 2"+" - "+AT2);
+                    BTN2.setText(A3+" - "+AT2);
                     TDA++;
                     
                 }       if(v == 3 && !BTN3.isSelected()){ 
                     
-                    TEXTO_NOME_DA_VEZ.setText("Técnico 3"+" - "+"3333");
+                    TEXTO_NOME_DA_VEZ.setText(A4+" - "+B4);
                     AT3++;
-                    BTN3.setText("Técnico 3"+" - "+AT3);
+                    BTN3.setText(A4+" - "+AT3);
                     TDA++;
                     
                 }       if(v == 4 && !BTN4.isSelected()){ 
                     
-                    TEXTO_NOME_DA_VEZ.setText("Técnico 4"+" - "+"4444");
+                    TEXTO_NOME_DA_VEZ.setText(A5+" - "+B5);
                     AT4++;
-                    BTN4.setText("Técnico 4"+" - "+AT4);
+                    BTN4.setText(A5+" - "+AT4);
                     TDA++;
                     
                 }       if(v == 5 && !BTN5.isSelected()){ 
                     
-                    TEXTO_NOME_DA_VEZ.setText("Técnico 5"+" - "+"5555");
+                    TEXTO_NOME_DA_VEZ.setText(A6+" - "+B6);
                     AT5++;
-                    BTN5.setText("Técnico 5"+" - "+AT5);
+                    BTN5.setText(A6+" - "+AT5);
                     TDA++;
                     
                 }       if(v == 6 && !BTN6.isSelected()){ 
                     
-                    TEXTO_NOME_DA_VEZ.setText("Técnico 6"+" - "+"6666");
+                    TEXTO_NOME_DA_VEZ.setText(A7+" - "+B7);
                     AT6++;
-                    BTN6.setText("Técnico 6"+" - "+AT6);
+                    BTN6.setText(A7+" - "+AT6);
                     TDA++;
                     
                     v = 0;
@@ -223,6 +227,11 @@ public class Tela extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(988, 382));
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         BTN1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -409,13 +418,81 @@ public class Tela extends javax.swing.JFrame {
                 AT6 = 0;
                 TEXTO_TOTAL.setText("Atendimentos : ");
                 TEXTO_NOME_DA_VEZ.setText("");
-                BTN1.setText("Técnico 1");
-                BTN2.setText("Técnico 2");
-                BTN3.setText("Técnico 3");
-                BTN4.setText("Técnico 4");
-                BTN5.setText("Técnico 5");
-                BTN6.setText("Técnico 6");
+                BTN1.setText(A2);
+                BTN2.setText(A3);
+                BTN3.setText(A4);
+                BTN4.setText(A5);
+                BTN5.setText(A6);
+                BTN6.setText(A7);
     }//GEN-LAST:event_BOTAO_ZERARActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // TODO add your handling code here:
+        
+        planilha.lerPlanilha("CONFIG6");
+        
+        ////////////////////////////////////////////////////////////////////////
+        A1 = PS[0];//QUANTIDADE DE TÉCNICOS
+        ////////////////////////////////////////////////////////////////////////
+        B1 = PS[1];//SEM IMPORTANCIA
+        C1 = PS[2];//SEM IMPORTANCIA
+        D1 = PS[3];//SEM IMPORTANCIA
+        E1 = PS[4];//SEM IMPORTANCIA
+        F1 = PS[5];//SEM IMPORTANCIA
+        ////////////////////////////////////////////////////////////////////////
+        A2 = PS[6];//NOME 1º TÉCNICO
+        B2 = PS[7];//EM 1º TÉCNICO
+        C2 = PS[8];//HORA ENTRADA 1º TÉCNICO
+        D2 = PS[9];//MINUTO ENRADA 1º TÉCNICO
+        E2 = PS[10];//HORA SAIDA 1º TÉCNICO
+        F2 = PS[11];//MINUTO SAIDA 1º TÉCNICO
+        ////////////////////////////////////////////////////////////////////////
+        A3 = PS[12];//NOME 2º TÉCNICO
+        B3 = PS[13];//EM 2º TÉCNICO
+        C3 = PS[14];//HORA ENTRADA 2º TÉCNICO
+        D3 = PS[15];//MINUTO ENRADA 2º TÉCNICO
+        E3 = PS[16];//HORA SAIDA 2º TÉCNICO
+        F3 = PS[17];//MINUTO SAIDA 2º TÉCNICO
+        ////////////////////////////////////////////////////////////////////////
+        A4 = PS[18];//NOME 3º TÉCNICO
+        B4 = PS[19];//EM 3º TÉCNICO
+        C4 = PS[20];//HORA ENTRADA 3º TÉCNICO
+        D4 = PS[21];//MINUTO ENRADA 3º TÉCNICO
+        E4 = PS[22];//HORA SAIDA 3º TÉCNICO
+        F4 = PS[23];//MINUTO SAIDA 3º TÉCNICO
+        ////////////////////////////////////////////////////////////////////////
+        A5 = PS[24];//NOME 4º TÉCNICO
+        B5 = PS[25];//EM 4º TÉCNICO
+        C5 = PS[26];//HORA ENTRADA 4º TÉCNICO
+        D5 = PS[27];//MINUTO ENRADA 4º TÉCNICO
+        E5 = PS[28];//HORA SAIDA 4º TÉCNICO
+        F5 = PS[29];//MINUTO SAIDA 4º TÉCNICO
+        ////////////////////////////////////////////////////////////////////////
+        A6 = PS[30];//NOME 5º TÉCNICO
+        B6 = PS[31];//EM 5º TÉCNICO
+        C6 = PS[32];//HORA ENTRADA 5º TÉCNICO
+        D6 = PS[33];//MINUTO ENRADA 5º TÉCNICO
+        E6 = PS[34];//HORA SAIDA 5º TÉCNICO
+        F6 = PS[35];//MINUTO SAIDA 5º TÉCNICO
+        ////////////////////////////////////////////////////////////////////////
+        A7 = PS[36];//NOME 6º TÉCNICO
+        B7 = PS[37];//EM 6º TÉCNICO
+        C7 = PS[38];//HORA ENTRADA 6º TÉCNICO
+        D7 = PS[39];//MINUTO ENRADA 6º TÉCNICO
+        E7 = PS[40];//HORA SAIDA 6º TÉCNICO
+        F7 = PS[41];//MINUTO SAIDA 6º TÉCNICO
+        ////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////
+        TEXTO_NOME_DA_VEZ.setText("");
+                BTN1.setText(A2);
+                BTN2.setText(A3);
+                BTN3.setText(A4);
+                BTN4.setText(A5);
+                BTN5.setText(A6);
+                BTN6.setText(A7);
+        ////////////////////////////////////////////////////////////////////////
+        
+    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments
