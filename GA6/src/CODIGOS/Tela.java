@@ -54,17 +54,6 @@ public class Tela extends javax.swing.JFrame {
                     
                 }
                 ///////////////////////////////////////////////////////////////////////
-                /*SE APENAS O 2º E O 3º TÉCNICO ESTIVEREM DESABILITADOS*/
-                if(v == 5 && !BTN1.isSelected() && BTN2.isSelected() && BTN3.isSelected() && !BTN4.isSelected() && !BTN5.isSelected() && !BTN6.isSelected()){
-                    
-                    TEXTO_NOME_DA_VEZ.setText("Técnico 5"+" - "+"5555");
-                    AT5++;
-                    BTN5.setText("Técnico 5"+" - "+AT5);
-                    TDA++;
-                    
-                    v = 0;
-                }
-                ///////////////////////////////////////////////////////////////////////
                 /*SE APENAS O 4º E O 5º TÉCNICO ESTIVEREM HABILITADOS*/
                 if(v == 6 && BTN1.isSelected() && BTN2.isSelected() && BTN3.isSelected() && !BTN4.isSelected() && !BTN5.isSelected() && BTN6.isSelected()){
                     v = v - 5;
