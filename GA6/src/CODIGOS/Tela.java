@@ -259,6 +259,7 @@ public class Tela extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Gerenciador de Atendimento Alpha Version - Desenvolvedor Ismael Ribeiro Moura");
         setPreferredSize(new java.awt.Dimension(968, 382));
+        setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -599,167 +600,182 @@ public class Tela extends javax.swing.JFrame {
         if(Integer.parseInt(C2) > 9 && Integer.parseInt(D2) < 10){
         ET1 = C2+":0"+D2+":00";
         }
-//        ////////////////////////////////////////////////////////////////////////
-//        if(Integer.parseInt(PS[14]) < 10 && Integer.parseInt(PS[15]) < 10){
-//        PSL3[6] = "0"+PS[14]+":0"+PS[15]+":00";
-//        }else
-//        if(Integer.parseInt(PS[14]) > 9 && Integer.parseInt(PS[15]) > 9){
-//        PSL3[6] = PS[14]+":"+PS[15]+":00";
-//        }else
-//        if(Integer.parseInt(PS[14]) < 10 && Integer.parseInt(PS[15]) > 9){
-//        PSL3[6] = "0"+PS[14]+":"+PS[15]+":00";
-//        }else
-//        if(Integer.parseInt(PS[14]) > 9 && Integer.parseInt(PS[15]) < 10){
-//        PSL3[6] = PS[14]+":0"+PS[15]+":00";
-//        }
-//        ////////////////////////////////////////////////////////////////////////
-//        if(Integer.parseInt(PS[20]) < 10 && Integer.parseInt(PS[21]) < 10){
-//        PSL4[6] = "0"+PS[20]+":0"+PS[21]+":00";
-//        }else
-//        if(Integer.parseInt(PS[20]) > 9 && Integer.parseInt(PS[21]) > 9){
-//        PSL4[6] = PS[20]+":"+PS[21]+":00";
-//        }else
-//        if(Integer.parseInt(PS[20]) < 10 && Integer.parseInt(PS[21]) > 9){
-//        PSL4[6] = "0"+PS[20]+":"+PS[21]+":00";
-//        }else
-//        if(Integer.parseInt(PS[20]) > 9 && Integer.parseInt(PS[21]) < 10){
-//        PSL4[6] = PS[20]+":0"+PS[21]+":00";
-//        }
-//        ////////////////////////////////////////////////////////////////////////
-//        if(Integer.parseInt(PS[26]) < 10 && Integer.parseInt(PS[27]) < 10){
-//        PSL5[6] = "0"+PS[26]+":0"+PS[27]+":00";
-//        }else
-//        if(Integer.parseInt(PS[26]) > 9 && Integer.parseInt(PS[27]) > 9){
-//        PSL5[6] = PS[26]+":"+PS[27]+":00";
-//        }else
-//        if(Integer.parseInt(PS[26]) < 10 && Integer.parseInt(PS[27]) > 9){
-//        PSL5[6] = "0"+PS[26]+":"+PS[27]+":00";
-//        }else
-//        if(Integer.parseInt(PS[26]) > 9 && Integer.parseInt(PS[27]) < 10){
-//        PSL5[6] = PS[26]+":0"+PS[27]+":00";
-//        }
-//        ////////////////////////////////////////////////////////////////////////
-//        if(Integer.parseInt(PS[32]) < 10 && Integer.parseInt(PS[33]) < 10){
-//        PSL6[6] = "0"+PS[32]+":0"+PS[33]+":00";
-//        }else
-//        if(Integer.parseInt(PS[32]) > 9 && Integer.parseInt(PS[33]) > 9){
-//        PSL6[6] = PS[32]+":"+PS[33]+":00";
-//        }else
-//        if(Integer.parseInt(PS[32]) < 10 && Integer.parseInt(PS[33]) > 9){
-//        PSL6[6] = "0"+PS[32]+":"+PS[33]+":00";
-//        }else
-//        if(Integer.parseInt(PS[32]) > 9 && Integer.parseInt(PS[33]) < 10){
-//        PSL6[6] = PS[32]+":0"+PS[33]+":00";
-//        }
-//        
-//        /*   SAIDA   */
-//        if(Integer.parseInt(PS[10]) < 10 && Integer.parseInt(PS[11]) < 10){
-//        PSL2[7] = "0"+PS[10]+":0"+PS[11]+":00";
-//        }else
-//        if(Integer.parseInt(PS[10]) > 9 && Integer.parseInt(PS[11]) > 9){
-//        PSL2[7] = PS[10]+":"+PS[11]+":00";
-//        }else
-//        if(Integer.parseInt(PS[10]) > 9 && Integer.parseInt(PS[11]) < 10){
-//        PSL2[7] = PS[10]+":0"+PS[11]+":00";
-//        }else
-//        if(Integer.parseInt(PS[10]) < 10 && Integer.parseInt(PS[11]) > 9){
-//        PSL2[7] = "0"+PS[10]+":"+PS[11]+":00";
-//        }
-//        ////////////////////////////////////////////////////////////////////////
-//        if(Integer.parseInt(PS[16]) < 10 && Integer.parseInt(PS[17]) < 10){
-//        PSL3[7] = "0"+PS[16]+":0"+PS[17]+":00";
-//        }else
-//        if(Integer.parseInt(PS[16]) > 9 && Integer.parseInt(PS[17]) > 9){
-//        PSL3[7] = PS[16]+":"+PS[17]+":00";
-//        }else
-//        if(Integer.parseInt(PS[16]) > 9 && Integer.parseInt(PS[17]) < 10){
-//        PSL3[7] = PS[16]+":0"+PS[17]+":00";
-//        }else
-//        if(Integer.parseInt(PS[16]) < 10 && Integer.parseInt(PS[17]) > 9){
-//        PSL3[7] = "0"+PS[16]+":"+PS[17]+":00";
-//        }
-//        ////////////////////////////////////////////////////////////////////////
-//        if(Integer.parseInt(PS[22]) < 10 && Integer.parseInt(PS[23]) < 10){
-//        PSL4[7] = "0"+PS[22]+":0"+PS[23]+":00";
-//        }else
-//        if(Integer.parseInt(PS[22]) > 9 && Integer.parseInt(PS[23]) > 9){
-//        PSL4[7] = PS[22]+":"+PS[23]+":00";
-//        }else
-//        if(Integer.parseInt(PS[22]) > 9 && Integer.parseInt(PS[23]) < 10){
-//        PSL4[7] = PS[22]+":0"+PS[23]+":00";
-//        }else
-//        if(Integer.parseInt(PS[22]) < 10 && Integer.parseInt(PS[23]) > 9){
-//        PSL4[7] = "0"+PS[22]+":"+PS[23]+":00";
-//        }
-//        ////////////////////////////////////////////////////////////////////////
-//        if(Integer.parseInt(PS[28]) < 10 && Integer.parseInt(PS[29]) < 10){
-//        PSL5[7] = "0"+PS[28]+":0"+PS[29]+":00";
-//        }else
-//        if(Integer.parseInt(PS[28]) > 9 && Integer.parseInt(PS[29]) > 9){
-//        PSL5[7] = PS[28]+":"+PS[29]+":00";
-//        }else
-//        if(Integer.parseInt(PS[28]) > 9 && Integer.parseInt(PS[29]) < 10){
-//        PSL5[7] = PS[28]+":0"+PS[29]+":00";
-//        }else
-//        if(Integer.parseInt(PS[28]) < 10 && Integer.parseInt(PS[29]) > 9){
-//        PSL5[7] = "0"+PS[28]+":"+PS[29]+":00";
-//        }
-//        ////////////////////////////////////////////////////////////////////////
-//        if(Integer.parseInt(PS[34]) < 10 && Integer.parseInt(PS[35]) < 10){
-//        PSL6[7] = "0"+PS[34]+":0"+PS[35]+":00";
-//        }else
-//        if(Integer.parseInt(PS[34]) > 9 && Integer.parseInt(PS[35]) > 9){
-//        PSL6[7] = PS[34]+":"+PS[35]+":00";
-//        }else
-//        if(Integer.parseInt(PS[34]) > 9 && Integer.parseInt(PS[35]) < 10){
-//        PSL6[7] = PS[34]+":0"+PS[35]+":00";
-//        }else
-//        if(Integer.parseInt(PS[34]) < 10 && Integer.parseInt(PS[35]) > 9){
-//        PSL6[7] = "0"+PS[34]+":"+PS[35]+":00";
-//        }
+        ////////////////////////////////////////////////////////////////////////
+        if(Integer.parseInt(C3) < 10 && Integer.parseInt(D3) < 10){
+        ET2 = "0"+C3+":0"+D3+":00";
+        }else
+        if(Integer.parseInt(C3) > 9 && Integer.parseInt(D3) > 9){
+        ET2 = C3+":"+D3+":00";
+        }else
+        if(Integer.parseInt(C3) < 10 && Integer.parseInt(D3) > 9){
+        ET2 = "0"+C3+":"+D3+":00";
+        }else
+        if(Integer.parseInt(C3) > 9 && Integer.parseInt(D3) < 10){
+        ET2 = C3+":0"+D3+":00";
+        }
+        ////////////////////////////////////////////////////////////////////////
+        if(Integer.parseInt(C4) < 10 && Integer.parseInt(D4) < 10){
+        ET3 = "0"+C4+":0"+D4+":00";
+        }else
+        if(Integer.parseInt(C4) > 9 && Integer.parseInt(D4) > 9){
+        ET3 = C4+":"+D4+":00";
+        }else
+        if(Integer.parseInt(C4) < 10 && Integer.parseInt(D4) > 9){
+        ET3 = "0"+C4+":"+D4+":00";
+        }else
+        if(Integer.parseInt(C4) > 9 && Integer.parseInt(D4) < 10){
+        ET3 = C4+":0"+D4+":00";
+        }
+        ////////////////////////////////////////////////////////////////////////
+        if(Integer.parseInt(C5) < 10 && Integer.parseInt(D5) < 10){
+        ET4 = "0"+C5+":0"+D5+":00";
+        }else
+        if(Integer.parseInt(C5) > 9 && Integer.parseInt(D5) > 9){
+        ET4 = C5+":"+D5+":00";
+        }else
+        if(Integer.parseInt(C5) < 10 && Integer.parseInt(D5) > 9){
+        ET4 = "0"+C5+":"+D5+":00";
+        }else
+        if(Integer.parseInt(C5) > 9 && Integer.parseInt(D5) < 10){
+        ET4 = C5+":0"+D5+":00";
+        }
+        ////////////////////////////////////////////////////////////////////////
+        if(Integer.parseInt(C6) < 10 && Integer.parseInt(D6) < 10){
+        ET5 = "0"+C6+":0"+D6+":00";
+        }else
+        if(Integer.parseInt(C6) > 9 && Integer.parseInt(D6) > 9){
+        ET5 = C6+":"+D6+":00";
+        }else
+        if(Integer.parseInt(C6) < 10 && Integer.parseInt(D6) > 9){
+        ET5 = "0"+C6+":"+D6+":00";
+        }else
+        if(Integer.parseInt(C6) > 9 && Integer.parseInt(D6) < 10){
+        ET5 = C6+":0"+D6+":00";
+        }
+        ////////////////////////////////////////////////////////////////////////
+        if(Integer.parseInt(C7) < 10 && Integer.parseInt(D7) < 10){
+        ET6 = "0"+C7+":0"+D7+":00";
+        }else
+        if(Integer.parseInt(C7) > 9 && Integer.parseInt(D7) > 9){
+        ET6 = C7+":"+D7+":00";
+        }else
+        if(Integer.parseInt(C7) < 10 && Integer.parseInt(D7) > 9){
+        ET6 = "0"+C7+":"+D7+":00";
+        }else
+        if(Integer.parseInt(C7) > 9 && Integer.parseInt(D7) < 10){
+        ET6 = C7+":0"+D7+":00";
+        }
+        
+        /*   SAIDA   */
+        if(Integer.parseInt(E2) < 10 && Integer.parseInt(F2) < 10){
+        ST1 = "0"+E2+":0"+F2+":00";
+        }else
+        if(Integer.parseInt(E2) > 9 && Integer.parseInt(F2) > 9){
+        ST1 = E2+":"+F2+":00";
+        }else
+        if(Integer.parseInt(E2) > 9 && Integer.parseInt(F2) < 10){
+        ST1 = E2+":0"+F2+":00";
+        }else
+        if(Integer.parseInt(E2) < 10 && Integer.parseInt(F2) > 9){
+        ST1 = "0"+E2+":"+F2+":00";
+        }
+        ////////////////////////////////////////////////////////////////////////
+        if(Integer.parseInt(E3) < 10 && Integer.parseInt(F3) < 10){
+        ST2 = "0"+E3+":0"+F3+":00";
+        }else
+        if(Integer.parseInt(E3) > 9 && Integer.parseInt(F3) > 9){
+        ST2 = E3+":"+F3+":00";
+        }else
+        if(Integer.parseInt(E3) > 9 && Integer.parseInt(F3) < 10){
+        ST2 = E3+":0"+F3+":00";
+        }else
+        if(Integer.parseInt(E3) < 10 && Integer.parseInt(F3) > 9){
+        ST2 = "0"+E3+":"+F3+":00";
+        }
+        ////////////////////////////////////////////////////////////////////////
+        if(Integer.parseInt(E4) < 10 && Integer.parseInt(F4) < 10){
+        ST3 = "0"+E4+":0"+F4+":00";
+        }else
+        if(Integer.parseInt(E4) > 9 && Integer.parseInt(F4) > 9){
+        ST3 = E4+":"+F4+":00";
+        }else
+        if(Integer.parseInt(E4) > 9 && Integer.parseInt(F4) < 10){
+        ST3 = E4+":0"+F4+":00";
+        }else
+        if(Integer.parseInt(E4) < 10 && Integer.parseInt(F4) > 9){
+        ST3 = "0"+E4+":"+F4+":00";
+        }
+        ////////////////////////////////////////////////////////////////////////
+        if(Integer.parseInt(E5) < 10 && Integer.parseInt(F5) < 10){
+        ST4 = "0"+E5+":0"+F5+":00";
+        }else
+        if(Integer.parseInt(E5) > 9 && Integer.parseInt(F5) > 9){
+        ST4 = E5+":"+F5+":00";
+        }else
+        if(Integer.parseInt(E5) > 9 && Integer.parseInt(F5) < 10){
+        ST4 = E5+":0"+F5+":00";
+        }else
+        if(Integer.parseInt(E5) < 10 && Integer.parseInt(F5) > 9){
+        ST4 = "0"+E5+":"+F5+":00";
+        }
+        ////////////////////////////////////////////////////////////////////////
+        if(Integer.parseInt(E6) < 10 && Integer.parseInt(F6) < 10){
+        ST5 = "0"+E6+":0"+F6+":00";
+        }else
+        if(Integer.parseInt(E6) > 9 && Integer.parseInt(F6) > 9){
+        ST5 = E6+":"+F6+":00";
+        }else
+        if(Integer.parseInt(E6) > 9 && Integer.parseInt(F6) < 10){
+        ST5 = E6+":0"+F6+":00";
+        }else
+        if(Integer.parseInt(E6) < 10 && Integer.parseInt(F6) > 9){
+        ST5 = "0"+E6+":"+F6+":00";
+        }
+        ////////////////////////////////////////////////////////////////////////
+        if(Integer.parseInt(E7) < 10 && Integer.parseInt(F7) < 10){
+        ST6 = "0"+E7+":0"+F7+":00";
+        }else
+        if(Integer.parseInt(E7) > 9 && Integer.parseInt(F7) > 9){
+        ST6 = E7+":"+F7+":00";
+        }else
+        if(Integer.parseInt(E7) > 9 && Integer.parseInt(F7) < 10){
+        ST6 = E7+":0"+F7+":00";
+        }else
+        if(Integer.parseInt(E7) < 10 && Integer.parseInt(F7) > 9){
+        ST6 = "0"+E7+":"+F7+":00";
+        }
+
         ////////////////////////////////////////////////////////////////////////
         HCT1 = Integer.parseInt(C2);//Hora Chegada Técnico 1
         MCT1 = Integer.parseInt(D2);//Minuto chegada Técnico 1
         HST1 = Integer.parseInt(E2);//Hora Saida Técnico 1
         MST1 = Integer.parseInt(F2);//Minuto Saida Técnico 1
-//        ET1 = PSL2[6];//Entrada Técnico 1
-//        ST1 = PSL2[7];//Saida Técnico 1
-        
+        ////////////////////////////////////////////////////////////////////////
         HCT2 = Integer.parseInt(C3);//Hora Chegada Técnico 2
         MCT2 = Integer.parseInt(D3);//Minuto Chegada Técnico 2
         HST2 = Integer.parseInt(E3);//Hora Saida Técnico 2
         MST2 = Integer.parseInt(F3);//Minuto Saida Técnico 2
-//        ET2 = PSL3[6];//Entrada Técnico 2
-//        ST2 = PSL3[7];//Saida Técnico 2
-        
+        ////////////////////////////////////////////////////////////////////////
         HCT3 = Integer.parseInt(C4);//Hora Chegada Técnico 3
         MCT3 = Integer.parseInt(D4);//Minuto Chegada Técnico 3
         HST3 = Integer.parseInt(E4);//Hora Saida Técnico 3
         MST3 = Integer.parseInt(F4);//Minuto Saida Técnico 3
-//        ET3 = PSL4[6];//Entrada Técnico 3
-//        ST3 = PSL4[7];//Saida Técnico 3
-        
+        ////////////////////////////////////////////////////////////////////////
         HCT4 = Integer.parseInt(C5);//Hora Chegada Técnico 4
         MCT4 = Integer.parseInt(D5);//Minuto Chegada Técnico 4
         HST4 = Integer.parseInt(E5);//Hora Saida Técnico 4
         MST4 = Integer.parseInt(F5);//Minuto Saida Técnico 4
-//        ET4 = PSL5[6];//Entrada Técnico 4
-//        ST4 = PSL5[7];//Saida Técnico 4
-        
+        ////////////////////////////////////////////////////////////////////////
         HCT5 = Integer.parseInt(C6);//Hora Chegada Técnico 5
         MCT5 = Integer.parseInt(D6);//Minuto Chegada Técnico 5
         HST5 = Integer.parseInt(E6);//Hora Saida Técnico 5
         MST5 = Integer.parseInt(F6);//Minuto Saida Técnico 5
-//        ET5 = PSL6[6];//Entrada Técnico 5
-//        ST5 = PSL6[7];//Saida Técnico 5
-        
+        ////////////////////////////////////////////////////////////////////////
         HCT6 = Integer.parseInt(C7);//Hora Chegada Técnico 5
         MCT6 = Integer.parseInt(D7);//Minuto Chegada Técnico 5
         HST6 = Integer.parseInt(E7);//Hora Saida Técnico 5
         MST6 = Integer.parseInt(F7);//Minuto Saida Técnico 5
-//        ET6 = PSL6[6];//Entrada Técnico 5
-//        ST6 = PSL6[7];//Saida Técnico 5
-
+        ////////////////////////////////////////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////
          timer = new Timer(1000, (ActionEvent e) -> {
             
@@ -838,6 +854,11 @@ public class Tela extends javax.swing.JFrame {
                 BTN5.setSelected(false);
                 BTN5.setForeground(Color.black);
             }
+            if(horas.equals(ET6)){
+                BTN6.setEnabled(true);
+                BTN6.setSelected(false);
+                BTN6.setForeground(Color.black);
+            }
                 ////////////////////////////////////////////////////////////////////
             /*TÉCNICOS DESABILITADOS NA HORA E MINUTO DEFINIDOS*/
             if(horas.equals(ST1)){
@@ -864,6 +885,11 @@ public class Tela extends javax.swing.JFrame {
                 BTN5.setEnabled(false);
                 BTN5.setSelected(true);
                 BTN5.setForeground(Color.red);
+            }
+             if(horas.equals(ST6)){
+                BTN6.setEnabled(false);
+                BTN6.setSelected(true);
+                BTN6.setForeground(Color.red);
             }
            
         });
