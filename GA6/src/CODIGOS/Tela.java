@@ -27,7 +27,7 @@ public class Tela extends javax.swing.JFrame {
     public int TDA;
     public int AT1, AT2, AT3, AT4, AT5, AT6;
     
-    public static String A1, A2, A3, A4, A5, A6, A7, B1, B2, B3, B4, B5, B6, B7, C1, C2, C3, C4, C5, C6, C7, D1, D2, D3, D4, D5, D6, D7, E1, E2, E3, E4, E5, E6, E7, F1, F2, F3, F4, F5, F6, F7;
+    public String A1,A2, A3, A4, A5, A6, A7, B2, B3, B4, B5, B6, B7, C2, C3, C4, C5, C6, C7, D2, D3, D4, D5, D6, D7, E2, E3, E4, E5, E6, E7, F2, F3, F4, F5, F6, F7;
     
     public int HCT1, MCT1, HST1, MST1, HCT2, MCT2, HST2, MST2, HCT3, MCT3, HST3, MST3, HCT4, MCT4, HST4, MST4,  HCT5, MCT5, HST5, MST5, HCT6, MCT6, HST6, MST6;
     
@@ -530,12 +530,6 @@ public class Tela extends javax.swing.JFrame {
         ////////////////////////////////////////////////////////////////////////
         A1 = PS[0];//QUANTIDADE DE TÉCNICOS
         ////////////////////////////////////////////////////////////////////////
-        B1 = PS[1];//SEM IMPORTANCIA
-        C1 = PS[2];//SEM IMPORTANCIA
-        D1 = PS[3];//SEM IMPORTANCIA
-        E1 = PS[4];//SEM IMPORTANCIA
-        F1 = PS[5];//SEM IMPORTANCIA
-        ////////////////////////////////////////////////////////////////////////
         A2 = PS[6];//NOME 1º TÉCNICO
         B2 = PS[7];//EM 1º TÉCNICO
         C2 = PS[8];//HORA ENTRADA 1º TÉCNICO
@@ -777,6 +771,11 @@ public class Tela extends javax.swing.JFrame {
         MST6 = Integer.parseInt(F7);//Minuto Saida Técnico 5
         ////////////////////////////////////////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////
+        
+        obterHoras();//OBTEM A HORA EM QUE O PROGRAMA É ABERTO
+        
+        ////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////
          timer = new Timer(1000, (ActionEvent e) -> {
             
             contador++;
@@ -832,69 +831,167 @@ public class Tela extends javax.swing.JFrame {
             if(horas.equals(ET1)){
                 BTN1.setEnabled(true);
                 BTN1.setSelected(false);
-                BTN1.setForeground(Color.black);
+                BTN1.setForeground(COR_BTN_HABILITADO);
             }
             if(horas.equals(ET2)){
                 BTN2.setEnabled(true);
                 BTN2.setSelected(false);
-                BTN2.setForeground(Color.black);
+                BTN2.setForeground(COR_BTN_HABILITADO);
             }
             if(horas.equals(ET3)){
                 BTN3.setEnabled(true);
                 BTN3.setSelected(false);
-                BTN3.setForeground(Color.black);
+                BTN3.setForeground(COR_BTN_HABILITADO);
             }
             if(horas.equals(ET4)){
                 BTN4.setEnabled(true);
                 BTN4.setSelected(false);
-                BTN4.setForeground(Color.black);
+                BTN4.setForeground(COR_BTN_HABILITADO);
             }
             if(horas.equals(ET5)){
                 BTN5.setEnabled(true);
                 BTN5.setSelected(false);
-                BTN5.setForeground(Color.black);
+                BTN5.setForeground(COR_BTN_HABILITADO);
             }
             if(horas.equals(ET6)){
                 BTN6.setEnabled(true);
                 BTN6.setSelected(false);
-                BTN6.setForeground(Color.black);
+                BTN6.setForeground(COR_BTN_HABILITADO);
             }
                 ////////////////////////////////////////////////////////////////////
             /*TÉCNICOS DESABILITADOS NA HORA E MINUTO DEFINIDOS*/
             if(horas.equals(ST1)){
                 BTN1.setEnabled(false);
                 BTN1.setSelected(true);
-                BTN1.setForeground(Color.red);
+                BTN1.setForeground(COR_BTN_DESABILITADO);
             }
             if(horas.equals(ST2)){
                 BTN2.setEnabled(false);
                 BTN2.setSelected(true);
-                BTN2.setForeground(Color.red);
+                BTN2.setForeground(COR_BTN_DESABILITADO);
             }
             if(horas.equals(ST3)){
                 BTN3.setEnabled(false);
                 BTN3.setSelected(true);
-                BTN3.setForeground(Color.red);
+                BTN3.setForeground(COR_BTN_DESABILITADO);
             }
             if(horas.equals(ST4)){
                 BTN4.setEnabled(false);
                 BTN4.setSelected(true);
-                BTN4.setForeground(Color.red);
+                BTN4.setForeground(COR_BTN_DESABILITADO);
             }
             if(horas.equals(ST5)){
                 BTN5.setEnabled(false);
                 BTN5.setSelected(true);
-                BTN5.setForeground(Color.red);
+                BTN5.setForeground(COR_BTN_DESABILITADO);
             }
              if(horas.equals(ST6)){
                 BTN6.setEnabled(false);
                 BTN6.setSelected(true);
-                BTN6.setForeground(Color.red);
+                BTN6.setForeground(COR_BTN_DESABILITADO);
             }
            
         });
         
         timer.start();
+        
+        ////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////
+         ///////////////////////////////////////////////////////////////////////
+        /*DEPOIS DO HORARIO DE CHEGADA O BOTAO INICIA HABILITADO*/
+        if((hora >= HCT1 && minuto >= MCT1) ||
+           (hora > HCT1)){
+            BTN1.setSelected(false);
+            BTN1.setForeground(COR_BTN_HABILITADO);
+        }
+        if((hora >= HCT2 && minuto >= MCT2) ||
+           (hora > HCT2)){
+            BTN2.setSelected(false);
+            BTN2.setForeground(COR_BTN_HABILITADO);
+        }
+        if((hora >= HCT3 && minuto >= MCT3) ||
+           (hora > HCT3)){
+            BTN3.setSelected(false);
+            BTN3.setForeground(COR_BTN_HABILITADO);
+        }
+        if((hora >= HCT4 && minuto >= MCT4) ||
+           (hora > HCT4)){
+            BTN4.setSelected(false);
+            BTN4.setForeground(COR_BTN_HABILITADO);
+        }
+        if((hora >= HCT5 && minuto >= MCT5) ||
+           (hora > HCT5)){
+            BTN5.setSelected(false);
+            BTN5.setForeground(COR_BTN_HABILITADO);
+        }
+         if((hora >= HCT6 && minuto >= MCT6) ||
+           (hora > HCT6)){
+            BTN6.setSelected(false);
+            BTN6.setForeground(COR_BTN_HABILITADO);
+        }
+        /*ANTES DO HORARIO O BOTAO INICIA DESABILITADO*/
+        if(hora < HCT1 || hora == HCT1 && minuto < MCT1){
+            BTN1.setEnabled(false);
+            BTN1.setSelected(true);
+            BTN1.setForeground(COR_BTN_DESABILITADO);
+        }
+        if(hora < HCT2 || hora == HCT2 && minuto < MCT2){
+            BTN2.setEnabled(false);
+            BTN2.setSelected(true);
+            BTN2.setForeground(COR_BTN_DESABILITADO);
+        }
+        if(hora < HCT3 || hora == HCT3 && minuto < MCT3){
+            BTN3.setEnabled(false);
+            BTN3.setSelected(true);
+            BTN3.setForeground(COR_BTN_DESABILITADO);
+        }
+        if(hora < HCT4 || hora == HCT4 && minuto < MCT4){
+            BTN4.setEnabled(false);
+            BTN4.setSelected(true);
+            BTN4.setForeground(COR_BTN_DESABILITADO);
+        }
+        if(hora < HCT5 || hora == HCT5 && minuto < MCT5){
+            BTN5.setEnabled(false);
+            BTN5.setSelected(true);
+            BTN5.setForeground(COR_BTN_DESABILITADO);
+        }
+        if(hora < HCT6 || hora == HCT6 && minuto < MCT6){
+            BTN6.setEnabled(false);
+            BTN6.setSelected(true);
+            BTN6.setForeground(COR_BTN_DESABILITADO);
+        }
+         ////////////////////////////////////////////////////////////////////////
+        /*DEPOIS DO HORARIO DE SAIDA O BOTAO INICIA DESABILITADO ||||| */
+        if(hora == HST1 && minuto == MST1 || hora == HST1 && minuto >  MST1 || hora > HST1){
+            BTN1.setEnabled(false);
+            BTN1.setSelected(true);
+            BTN1.setForeground(COR_BTN_DESABILITADO);
+        }
+        if(hora == HST2 && minuto == MST2 || hora == HST2 && minuto >  MST2 || hora > HST2){
+            BTN2.setEnabled(false);
+            BTN2.setSelected(true);
+            BTN2.setForeground(COR_BTN_DESABILITADO);
+        }
+        if(hora == HST3 && minuto == MST3 || hora == HST3 && minuto >  MST3 || hora > HST3){
+            BTN3.setEnabled(false);
+            BTN3.setSelected(true);
+            BTN3.setForeground(COR_BTN_DESABILITADO);
+        }
+        if(hora == HST4 && minuto == MST4 || hora == HST4 && minuto >  MST4 || hora > HST4){
+            BTN4.setEnabled(false);
+            BTN4.setSelected(true);
+            BTN4.setForeground(COR_BTN_DESABILITADO);
+        }
+        if(hora == HST5 && minuto == MST5 || hora == HST5 && minuto >  MST5 || hora > HST5){
+            BTN5.setEnabled(false);
+            BTN5.setSelected(true);
+            BTN5.setForeground(COR_BTN_DESABILITADO);
+        }
+        if(hora == HST6 && minuto == MST6 || hora == HST6 && minuto >  MST6 || hora > HST6){
+            BTN6.setEnabled(false);
+            BTN6.setSelected(true);
+            BTN6.setForeground(COR_BTN_DESABILITADO);
+        }
         
     }//GEN-LAST:event_formWindowOpened
 
