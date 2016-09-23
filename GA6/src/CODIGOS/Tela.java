@@ -6,8 +6,11 @@
 package CODIGOS;
 
 import static CODIGOS.Planilha.PS;
+import java.applet.Applet;
+import java.applet.AudioClip;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
+import java.net.URL;
 import java.util.Calendar;
 import java.util.Random;
 import javax.swing.JOptionPane;
@@ -64,6 +67,12 @@ public class Tela extends javax.swing.JFrame {
         segundo = Integer.parseInt(String.format("%1$tS", now));//SEGUNDO
     }
     
+     public void play(String nomeDoAudio){
+        URL url = getClass().getResource("/CODIGOS/Sons/"+nomeDoAudio+".wav");//wav
+        AudioClip audio = Applet.newAudioClip(url);
+        audio.play();
+}
+    
     public void FuncaoPrincipal(){
                 v++;//A cada clique incrementa +1
                 ////////////////////////////////////////////////////////////////////////
@@ -82,10 +91,11 @@ public class Tela extends javax.swing.JFrame {
                  if(v == 1 && (BTN1.isSelected() && BTN2.isSelected() && BTN3.isSelected() && BTN4.isSelected() && !BTN5.isSelected() && BTN6.isSelected()) || 
                 (!BTN1.isEnabled() && !BTN2.isEnabled() && !BTN3.isEnabled() && !BTN4.isEnabled() && BTN5.isEnabled() && !BTN6.isEnabled())){
                     
-                TEXTO_NOME_DA_VEZ.setText("Técnico 5"+" - "+"5555");
+                TEXTO_NOME_DA_VEZ.setText(A6+" - "+B6);
                 AT5++;
-                BTN5.setText("Técnico 5"+" - "+AT5);
+                BTN5.setText(A6+" - "+AT5);
                 TDA++;
+                play("2227");
                     
                 }
                 ///////////////////////////////////////////////////////////////////////
@@ -191,6 +201,7 @@ public class Tela extends javax.swing.JFrame {
                     AT1++;
                     BTN1.setText(A2+" - "+AT1);
                     TDA++;
+                    play("2579");
                     
                 }       if(v == 2 && !BTN2.isSelected()){
                     
@@ -198,6 +209,7 @@ public class Tela extends javax.swing.JFrame {
                     AT2++;
                     BTN2.setText(A3+" - "+AT2);
                     TDA++;
+                    play("2431");
                     
                 }       if(v == 3 && !BTN3.isSelected()){ 
                     
@@ -205,6 +217,7 @@ public class Tela extends javax.swing.JFrame {
                     AT3++;
                     BTN3.setText(A4+" - "+AT3);
                     TDA++;
+                    play("2111");
                     
                 }       if(v == 4 && !BTN4.isSelected()){ 
                     
@@ -212,6 +225,7 @@ public class Tela extends javax.swing.JFrame {
                     AT4++;
                     BTN4.setText(A5+" - "+AT4);
                     TDA++;
+                    play("2747");
                     
                 }       if(v == 5 && !BTN5.isSelected()){ 
                     
@@ -219,6 +233,7 @@ public class Tela extends javax.swing.JFrame {
                     AT5++;
                     BTN5.setText(A6+" - "+AT5);
                     TDA++;
+                    play("2227");
                     
                 }       if(v == 6 && !BTN6.isSelected()){ 
                     
@@ -226,6 +241,7 @@ public class Tela extends javax.swing.JFrame {
                     AT6++;
                     BTN6.setText(A7+" - "+AT6);
                     TDA++;
+                    play("27");
                     
                     v = 0;
                 }
