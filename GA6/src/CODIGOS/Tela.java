@@ -6,16 +6,19 @@
 package CODIGOS;
 
 import static CODIGOS.Planilha.PS;
-import java.applet.Applet;
-import java.applet.AudioClip;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
-import java.net.URL;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Calendar;
-import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.Timer;
+import sun.audio.AudioPlayer;
+import sun.audio.AudioStream;
 
 /**
  *
@@ -68,9 +71,22 @@ public class Tela extends javax.swing.JFrame {
     }
     
      public void play(String nomeDoAudio){
-        URL url = getClass().getResource("/CODIGOS/Sons/"+nomeDoAudio+".wav");//wav
-        AudioClip audio = Applet.newAudioClip(url);
-        audio.play();
+        
+        /*ESSE TRECHO EXECUTA O ARQUIVO A PARTIR DE UMA PASTA DO PACOTE*/
+        //URL url = getClass().getResource("/CODIGOS/Sons/"+nomeDoAudio+".wav");//wav
+        //AudioClip audio = Applet.newAudioClip(url);
+        //audio.play();
+        
+        try {
+            String wav_file = "C:/GA6/EM/"+nomeDoAudio+".wav";
+            InputStream in = new FileInputStream(wav_file);
+            AudioStream audio = new AudioStream(in);
+            AudioPlayer.player.start(audio);
+        } catch (IOException ex) {
+            Logger.getLogger(Tela.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null,"O EM "+nomeDoAudio+" da planilha não corresponde ao arquivo de áudio existente");
+        }
+        
 }
     
     public void FuncaoPrincipal(){
@@ -95,7 +111,7 @@ public class Tela extends javax.swing.JFrame {
                 AT5++;
                 BTN5.setText(A6+" - "+AT5);
                 TDA++;
-                play("2227");
+                play(B6);
                     
                 }
                 ///////////////////////////////////////////////////////////////////////
@@ -201,7 +217,7 @@ public class Tela extends javax.swing.JFrame {
                     AT1++;
                     BTN1.setText(A2+" - "+AT1);
                     TDA++;
-                    play("2579");
+                    play(B2);
                     
                 }       if(v == 2 && !BTN2.isSelected()){
                     
@@ -209,7 +225,7 @@ public class Tela extends javax.swing.JFrame {
                     AT2++;
                     BTN2.setText(A3+" - "+AT2);
                     TDA++;
-                    play("2431");
+                    play(B3);
                     
                 }       if(v == 3 && !BTN3.isSelected()){ 
                     
@@ -217,7 +233,7 @@ public class Tela extends javax.swing.JFrame {
                     AT3++;
                     BTN3.setText(A4+" - "+AT3);
                     TDA++;
-                    play("2111");
+                    play(B4);
                     
                 }       if(v == 4 && !BTN4.isSelected()){ 
                     
@@ -225,7 +241,7 @@ public class Tela extends javax.swing.JFrame {
                     AT4++;
                     BTN4.setText(A5+" - "+AT4);
                     TDA++;
-                    play("2747");
+                    play(B5);
                     
                 }       if(v == 5 && !BTN5.isSelected()){ 
                     
@@ -233,7 +249,7 @@ public class Tela extends javax.swing.JFrame {
                     AT5++;
                     BTN5.setText(A6+" - "+AT5);
                     TDA++;
-                    play("2227");
+                    play(B6);
                     
                 }       if(v == 6 && !BTN6.isSelected()){ 
                     
@@ -241,7 +257,7 @@ public class Tela extends javax.swing.JFrame {
                     AT6++;
                     BTN6.setText(A7+" - "+AT6);
                     TDA++;
-                    play("27");
+                    play(B7);
                     
                     v = 0;
                 }
